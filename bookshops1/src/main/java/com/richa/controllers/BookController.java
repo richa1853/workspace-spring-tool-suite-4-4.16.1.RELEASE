@@ -3,6 +3,7 @@ package com.richa.controllers;
 import java.util.List;
 
 import javax.validation.Valid;
+import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -50,8 +51,8 @@ public class BookController {
         return bookFacade.findBooksByAuthor(author);
     }
 
-    @GetMapping(params = "title")
-    public List<BookDTO> getBooksByTitle(@RequestParam("title") String title) {
+    @GetMapping("{title}")
+    public List<BookDTO> getBooksByTitle(@PathParam("title") String title) {
         return bookFacade.findBooksByNameSearch(title);
     }
     /*  Book book = Book.builder().isbn("ISBN00001").title("El niño del pijama").price(9.99).author("Author Name").pages(200).provider("provider").build();

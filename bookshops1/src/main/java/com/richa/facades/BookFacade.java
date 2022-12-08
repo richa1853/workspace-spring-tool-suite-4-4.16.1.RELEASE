@@ -1,13 +1,14 @@
 package com.richa.facades;
 
 import com.richa.AppConfig;
-import com.richa.constants.ErrorCode;
 import com.richa.dtos.BookDTO;
 import com.richa.entities.Book;
+import com.richa.exception.global.customexceptions.BookCreateException;
 import com.richa.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import lombok.Builder;
@@ -17,9 +18,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import static com.richa.constants.ErrorCode.BOOK_ALREADY_EXISTS;
-import static com.richa.constants.ErrorCode.BOOK_NOT_FOUND;
-import static com.richa.constants.ErrorCode.BOOKS_EXCEEDED;
+
 
 //@Service
 @Component
@@ -27,26 +26,24 @@ public class BookFacade {
 
 	@Autowired
     private BookService bookService;
+	
     @Autowired
     private AppConfig appConfig;
 
-	public BookDTO addBook(BookDTO bookDTO )//throw exception
+	public BookDTO addBook(BookDTO bookDTO )throws Exception, BookCreateException
 	{
 		// count of books return
 		BookDTO bookDTO1 = new BookDTO();
 		long current_books = bookService.count();
 		long bookAddLimit = appConfig.getAddbook();
 		if (current_books > bookAddLimit) {
-			//customexception
-			bookDTO1.setErrorMessage(BOOKS_EXCEEDED.getMessage());
-			bookDTO1.setError(BOOKS_EXCEEDED.getCode());
-			return bookDTO1;
-		} else {
+			String errorMsg = "Cannot create more than "+bookAddLimit+" books";
+			throw new BookCreateException(errorMsg, HttpStatus.BAD_REQUEST.value());
+		} else { 
 			Optional<Book> bookOptional = bookService.findBookByISBN(bookDTO.getISBN());
 			if (bookOptional.isPresent()) {
-				bookDTO1.setErrorMessage(BOOK_ALREADY_EXISTS.getMessage());
-				bookDTO1.setError(BOOK_ALREADY_EXISTS.getCode());
-				return bookDTO1;
+				String errorMsg ="Book already exists";
+				throw new BookCreateException(errorMsg, HttpStatus.BAD_REQUEST.value());
 			} else {
 				Book book = new Book();
 				book.setIsbn(bookDTO.getISBN());
@@ -65,7 +62,7 @@ public class BookFacade {
 		}
 	}
 
-    public BookDTO updateBook(BookDTO bookDTO,Long id) {
+    public BookDTO updateBook(BookDTO bookDTO,Long id)throws Exception, BookCreateException {
     	Optional<Book> bookOptional=bookService.findById(id);
     	System.out.println("id is"+ bookDTO.getId());
     	if(bookOptional.isPresent()) {
@@ -84,50 +81,49 @@ public class BookFacade {
     	return bookDTO;
     }
     	else {
-    		bookDTO.setErrorMessage(BOOK_NOT_FOUND.getMessage());
-            bookDTO.setError(BOOK_NOT_FOUND.getCode());
-            return bookDTO;
+    		String errorMsg ="Book not found";
+			throw new BookCreateException(errorMsg, HttpStatus.BAD_REQUEST.value());
     	}
     }
 
-    public BookDTO findBookByISBN(String isbn){
+    public BookDTO findBookByISBN(String isbn) throws Exception{
         Optional<Book> bookOptional = bookService.findBookByISBN(isbn);
         if(bookOptional.isPresent()) {
             return BookDTO.fromBook(bookOptional.get());
         }
-
-        BookDTO bookDTO = new BookDTO();
-        bookDTO.setErrorMessage(BOOK_NOT_FOUND.getMessage());
-        bookDTO.setError(BOOK_NOT_FOUND.getCode());
-        return bookDTO;
+        else {
+        String errorMsg ="Book is not there";
+        throw new Exception(errorMsg);
     }
-    public BookDTO findBookById(long id) {
+    }
+    
+    public BookDTO findBookById(long id)throws Exception{
     	Optional<Book> bookOptional = bookService.findById(id);
         if(bookOptional.isPresent()) {
             return BookDTO.fromBook(bookOptional.get());
         }
-
-        BookDTO bookDTO = new BookDTO();
-        bookDTO.setErrorMessage(BOOK_NOT_FOUND.getMessage());
-        bookDTO.setError(BOOK_NOT_FOUND.getCode());
-        return bookDTO;
+        else throw new Exception("Book not found with the id ");
     }
-    public List<BookDTO> findBooksByAuthor(String author){
+    public List<BookDTO> findBooksByAuthor(String author)throws Exception{
         List<Book> books = bookService.findBooksByAuthor(author);
         if(!books.isEmpty()) {
             return books.stream().map(BookDTO::fromBook).collect(Collectors.toList());
         }
-        return new ArrayList<>(0);
+        else {
+        String errorMsg ="Book is not found";
+        throw new Exception(errorMsg);
     }
-    public List<BookDTO> findBooksByNameSearch(String str){
+    }
+    public List<BookDTO> findBooksByTitle(String str) throws Exception{
         List<Book> books = bookService.findBooksByTitle(str);
         if(!books.isEmpty()) {
             return books.stream().map(BookDTO::fromBook).collect(Collectors.toList());
         }
-        return new ArrayList<>(0);
+        String errorMsg ="Book not found";
+        throw new Exception(errorMsg);
     }
 
-    public List<BookDTO> findAll(){
+    public List<BookDTO> findAll() throws Exception{
         return bookService.findAll()
                 .stream()
                 .map(BookDTO::fromBook)

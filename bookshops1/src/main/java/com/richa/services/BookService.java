@@ -2,6 +2,7 @@ package com.richa.services;
 
 import com.richa.dtos.BookDTO;
 import com.richa.entities.Book;
+import com.richa.exception.global.customexceptions.BookCreateException;
 import com.richa.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,7 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    public Book save(Book book){
+    public Book save(Book book) throws Exception, BookCreateException{
     	Book book1=bookRepository.save(book);
     	
     	if(book1!=null) {
@@ -31,28 +32,28 @@ public class BookService {
         return book1;
     }
 
-    public Optional<Book> findById(Long id) {
+    public Optional<Book> findById(Long id)throws Exception {
     	return bookRepository.findById(id);
     	
     }
 
-    public Optional<Book> findBookByISBN(String isbn){
+    public Optional<Book> findBookByISBN(String isbn)throws Exception{
         return bookRepository.findBookByIsbn(isbn);
     }
 
     @Transactional
-    public List<Book> findBooksByAuthor(String author){
+    public List<Book> findBooksByAuthor(String author) throws Exception{
         return bookRepository.findBookByAuthor(author);
     }
 
-    public List<Book> findBooksByTitle(String title){
+    public List<Book> findBooksByTitle(String title)throws Exception{
         return bookRepository.findBooksByTitleContaining(title);
     }
 
-    public List<Book> findAll() {
+    public List<Book> findAll() throws Exception {
         return bookRepository.findAll();
     }
-    public long count() {
+    public long count()throws Exception {
     	return bookRepository.count();
     }
     @Transactional

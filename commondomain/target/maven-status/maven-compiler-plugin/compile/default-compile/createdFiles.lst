@@ -1,0 +1,7 @@
+com\richa\entities\Book.class
+com\richa\dtos\BookDTO$1.class
+com\richa\dtos\BookDTO$Builder.class
+com\richa\entities\Book$BookBuilder.class
+com\richa\entities\BaseEntity.class
+com\richa\dtos\BaseDTO.class
+com\richa\dtos\BookDTO.class

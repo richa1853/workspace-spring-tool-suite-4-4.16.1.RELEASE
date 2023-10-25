@@ -6,7 +6,6 @@ public class BookCreateException extends BaseException {
 
 	public BookCreateException() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public BookCreateException(String message) {
 		super(message);

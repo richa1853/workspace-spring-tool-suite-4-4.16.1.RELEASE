@@ -1,0 +1,27 @@
+2023-01-31 13:24:53.024  INFO 77372 --- [http-nio-2289-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-31 13:24:53.030  INFO 77372 --- [http-nio-2289-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-31 13:24:53.031  INFO 77372 --- [http-nio-2289-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-01-31 13:24:53.208  INFO 77372 --- [http-nio-2289-exec-1] com.richa.facades.BookFacadeImpl         : Bookcom.richa.dtos.BookDTO@4fb15aea[id=<null>,isbn=3332567003,title=Python Complete References 1,price=180.89,author=Captain,pages=320,provider=Python preferences one]
+2023-01-31 13:24:53.209  INFO 77372 --- [http-nio-2289-exec-1] com.richa.facades.BookFacadeImpl         : INFO book
+2023-01-31 13:24:53.209  WARN 77372 --- [http-nio-2289-exec-1] com.richa.facades.BookFacadeImpl         : Warn book
+2023-01-31 13:24:53.209 ERROR 77372 --- [http-nio-2289-exec-1] com.richa.facades.BookFacadeImpl         : Error book
+2023-01-31 13:24:53.426  INFO 77372 --- [http-nio-2289-exec-1] com.richa.facades.BookFacadeImpl         : Going to add book
+2023-01-31 13:24:53.495  INFO 77372 --- [http-nio-2289-exec-1] com.richa.facades.BookFacadeImpl         : Added book is com.richa.dtos.BookDTO@4fb15aea[id=1,isbn=3332567003,title=Python Complete References 1,price=180.89,author=Captain,pages=320,provider=Python preferences one]
+2023-01-31 13:30:13.548  INFO 77372 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-31 13:30:13.570  INFO 77372 --- [RMI TCP Connection(11)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-31 13:30:13.572  INFO 77372 --- [RMI TCP Connection(11)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-01-31 13:30:13.575  WARN 77372 --- [RMI TCP Connection(11)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [logback-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.4.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.4.1/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.4.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.4.1/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3463)
+ java.base@17.0.4.1/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3434)
+ java.base@17.0.4.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1623)
+ java.base@17.0.4.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1170)
+ java.base@17.0.4.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.4.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.4.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.4.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.4.1/java.lang.Thread.run(Thread.java:833)
+2023-01-31 13:30:13.579  INFO 77372 --- [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-31 13:30:13.579  INFO 77372 --- [RMI TCP Connection(11)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'

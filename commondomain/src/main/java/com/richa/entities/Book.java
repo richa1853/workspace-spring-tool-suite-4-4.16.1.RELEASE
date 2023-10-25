@@ -5,6 +5,8 @@ package com.richa.entities;
 //import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
+import com.richa.dtos.BookDTO;
+
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
@@ -132,6 +134,15 @@ public class Book extends BaseEntity {
 		return "Book [id=" + id + ", isbn=" + isbn + ", title=" + title + ", price=" + price + ", author=" + author
 				+ ", pages=" + pages + ", provider=" + provider + "]";
 	}
+	@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Book)) return false;
+
+        Book book = (Book) o;
+
+        return isbn.equals(book.isbn);
+    }
 	
     
     

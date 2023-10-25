@@ -1,0 +1,14 @@
+2023-05-06 10:28:17.637  INFO 25444 --- [http-nio-2289-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-06 10:28:17.641  INFO 25444 --- [http-nio-2289-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-06 10:28:17.642  INFO 25444 --- [http-nio-2289-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-06 10:28:17.856  INFO 25444 --- [http-nio-2289-exec-2] com.richa.facades.BookFacadeImpl         : Bookcom.richa.dtos.BookDTO@31be982[id=<null>,isbn=3332567003,title=Python Complete References 1,price=180.89,author=Captain,pages=320,provider=Python preferences one]
+2023-05-06 10:28:17.856  INFO 25444 --- [http-nio-2289-exec-2] com.richa.facades.BookFacadeImpl         : INFO book
+2023-05-06 10:28:17.858  WARN 25444 --- [http-nio-2289-exec-2] com.richa.facades.BookFacadeImpl         : Warn book
+2023-05-06 10:28:17.858 ERROR 25444 --- [http-nio-2289-exec-2] com.richa.facades.BookFacadeImpl         : Error book
+2023-05-06 10:28:18.199  INFO 25444 --- [http-nio-2289-exec-2] com.richa.facades.BookFacadeImpl         : Going to add book
+2023-05-06 10:28:18.282  INFO 25444 --- [http-nio-2289-exec-2] com.richa.facades.BookFacadeImpl         : Added book is com.richa.dtos.BookDTO@31be982[id=1,isbn=3332567003,title=Python Complete References 1,price=180.89,author=Captain,pages=320,provider=Python preferences one]
+2023-05-06 10:28:25.740  INFO 25444 --- [http-nio-2289-exec-3] com.richa.facades.BookFacadeImpl         : fetching all book details
+2023-05-06 10:28:59.251 ERROR 25444 --- [http-nio-2289-exec-4] com.richa.facades.BookFacadeImpl         : Book not found with the id 
+2023-05-06 10:28:59.262  WARN 25444 --- [http-nio-2289-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.Exception: Book not found with the id ]
+2023-05-06 10:31:01.977 ERROR 25444 --- [http-nio-2289-exec-6] com.richa.facades.BookFacadeImpl         : Book not found with the id 
+2023-05-06 10:31:01.981  WARN 25444 --- [http-nio-2289-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.Exception: Book not found with the id ]

@@ -52,6 +52,7 @@ public class Customer extends BaseEntity {
     @JsonIgnore
     @OneToMany(mappedBy = "customer")
     private List<Purchase> purchases;
+    
 
 	public Customer() {
 		super();

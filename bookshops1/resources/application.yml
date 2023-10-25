@@ -1,0 +1,47 @@
+server:
+  port: 2289
+
+###
+#   Database Settings
+###
+spring:
+  datasource:
+    url: jdbc:h2:mem:bookshop;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: true
+        format_sql: true
+
+###
+#   H2 Settings
+###
+  h2:
+    console:
+      enabled: true
+      path: /console
+      username: sa
+      password: password
+      settings:
+        trace: false
+        web-allow-others: false
+  sql:
+    init:
+      platform: h2
+      
+addbook: 3
+
+logging:
+  file:
+    name: C:/Users/richa_raj/Documents/workspace-spring-tool-suite-4-4.16.1.RELEASE/bookshops1/log/mylog.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i.log # by date
+      max-file-size: 2KB # by size

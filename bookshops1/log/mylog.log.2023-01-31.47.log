@@ -1,0 +1,17 @@
+2023-01-31 13:37:30.451  INFO 75372 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-31 13:37:30.459  INFO 75372 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-31 13:37:50.132  INFO 58308 --- [restartedMain] com.richa.BookshopsApplication           : Starting BookshopsApplication using Java 17.0.4.1 on PSL-4L47XM3 with PID 58308 (C:\Users\richa_raj\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\bookshops1\target\classes started by richa_raj in C:\Users\richa_raj\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\bookshops1)
+2023-01-31 13:37:50.133  INFO 58308 --- [restartedMain] com.richa.BookshopsApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-01-31 13:37:50.177  INFO 58308 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-01-31 13:37:50.177  INFO 58308 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-31 13:37:50.725  INFO 58308 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-31 13:37:50.784  INFO 58308 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 1 JPA repository interfaces.
+2023-01-31 13:37:51.305  INFO 58308 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2289 (http)
+2023-01-31 13:37:51.312  INFO 58308 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-31 13:37:51.314  INFO 58308 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2023-01-31 13:37:51.413  INFO 58308 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-31 13:37:51.414  INFO 58308 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1237 ms
+2023-01-31 13:37:51.435  INFO 58308 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-31 13:37:51.619  INFO 58308 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-31 13:37:51.628  INFO 58308 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/console'. Database available at 'jdbc:h2:mem:bookshop'
+2023-01-31 13:37:51.720  INFO 58308 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]

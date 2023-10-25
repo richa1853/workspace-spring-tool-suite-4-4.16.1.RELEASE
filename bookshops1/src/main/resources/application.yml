@@ -37,3 +37,11 @@ spring:
       platform: h2
       
 addbook: 3
+
+logging:
+  file:
+    name: C:/Users/richa_raj/Documents/workspace-spring-tool-suite-4-4.16.1.RELEASE/bookshops1/log/mylog.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i.log
+      max-file-size: 2KB # by size

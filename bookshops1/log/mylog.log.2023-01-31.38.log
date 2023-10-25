@@ -1,0 +1,16 @@
+2023-01-31 13:34:17.832  INFO 71720 --- [main] com.richa.facades.BookFacadeTest         : Starting BookFacadeTest using Java 17.0.4.1 on PSL-4L47XM3 with PID 71720 (started by richa_raj in C:\Users\richa_raj\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\bookshops1)
+2023-01-31 13:34:17.838  INFO 71720 --- [main] com.richa.facades.BookFacadeTest         : No active profile set, falling back to 1 default profile: "default"
+2023-01-31 13:34:17.884  INFO 71720 --- [main] com.richa.facades.BookFacadeTest         : Started BookFacadeTest in 0.082 seconds (JVM running for 2.15)
+2023-01-31 13:34:17.932  INFO 71720 --- [main] com.richa.facades.BookFacadeImpl         : Bookcom.richa.dtos.BookDTO@1624775[id=3,isbn=1234567890,title=Java,price=170.14,author=Rama,pages=300,provider=Java for beginners]
+2023-01-31 13:34:17.932  INFO 71720 --- [main] com.richa.facades.BookFacadeImpl         : INFO book
+2023-01-31 13:34:17.934  WARN 71720 --- [main] com.richa.facades.BookFacadeImpl         : Warn book
+2023-01-31 13:34:17.934 ERROR 71720 --- [main] com.richa.facades.BookFacadeImpl         : Error book
+2023-01-31 13:34:17.934 ERROR 71720 --- [main] com.richa.facades.BookFacadeImpl         : Book Limit Exceeded
+2023-01-31 13:34:17.950  INFO 71720 --- [main] com.richa.facades.BookFacadeImpl         : Current book iscom.richa.dtos.BookDTO@3cc30dee[id=<null>,isbn=1234567890,title=RestTemplate,price=170.14,author=RamShankar,pages=300,provider=RestTemplate for advance]
+2023-01-31 13:34:17.950  INFO 71720 --- [main] com.richa.facades.BookFacadeImpl         : updated book is Book [id=2, isbn=1234567890, title=RestTemplate, price=170.14, author=RamShankar, pages=300, provider=RestTemplate for advance]
+2023-01-31 13:34:17.958  INFO 71720 --- [main] com.richa.facades.BookFacadeImpl         : Current book iscom.richa.dtos.BookDTO@49e2b3c5[id=<null>,isbn=1234567890,title=RestTemplate,price=170.14,author=RamShankar,pages=300,provider=RestTemplate for advance]
+2023-01-31 13:34:17.958  WARN 71720 --- [main] com.richa.facades.BookFacadeImpl         : Book not found
+2023-01-31 13:34:17.965  INFO 71720 --- [main] com.richa.facades.BookFacadeImpl         : Bookcom.richa.dtos.BookDTO@45b32dfe[id=3,isbn=1234567890,title=Java,price=170.14,author=Rama,pages=300,provider=Java for beginners]
+2023-01-31 13:34:17.965  INFO 71720 --- [main] com.richa.facades.BookFacadeImpl         : INFO book
+2023-01-31 13:34:17.965  WARN 71720 --- [main] com.richa.facades.BookFacadeImpl         : Warn book
+2023-01-31 13:34:17.965 ERROR 71720 --- [main] com.richa.facades.BookFacadeImpl         : Error book

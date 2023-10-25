@@ -1,0 +1,12 @@
+2023-01-31 13:37:51.769  INFO 58308 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2023-01-31 13:37:51.918  INFO 58308 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-31 13:37:52.020  INFO 58308 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-31 13:37:52.552  INFO 58308 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-31 13:37:52.559  INFO 58308 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-31 13:37:52.883  WARN 58308 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-31 13:37:53.147  INFO 58308 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-01-31 13:37:53.187  INFO 58308 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 2289 (http) with context path ''
+2023-01-31 13:37:53.196  INFO 58308 --- [restartedMain] com.richa.BookshopsApplication           : Started BookshopsApplication in 3.444 seconds (JVM running for 4.27)
+2023-01-31 13:38:21.152  INFO 58308 --- [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-31 13:38:21.174  INFO 58308 --- [RMI TCP Connection(6)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-31 13:38:21.181  INFO 58308 --- [RMI TCP Connection(6)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'

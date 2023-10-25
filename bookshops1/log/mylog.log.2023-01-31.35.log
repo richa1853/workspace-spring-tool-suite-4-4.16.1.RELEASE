@@ -1,0 +1,13 @@
+2023-01-31 13:23:54.886  INFO 77372 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-31 13:23:55.110  INFO 77372 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-31 13:23:55.120  INFO 77372 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/console'. Database available at 'jdbc:h2:mem:bookshop'
+2023-01-31 13:23:55.215  INFO 77372 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-31 13:23:55.265  INFO 77372 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2023-01-31 13:23:55.410  INFO 77372 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-31 13:23:55.530  INFO 77372 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-31 13:23:56.064  INFO 77372 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-31 13:23:56.076  INFO 77372 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-31 13:23:56.396  WARN 77372 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-31 13:23:56.657  INFO 77372 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-01-31 13:23:56.691  INFO 77372 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 2289 (http) with context path ''
+2023-01-31 13:23:56.698  INFO 77372 --- [restartedMain] com.richa.BookshopsApplication           : Started BookshopsApplication in 3.678 seconds (JVM running for 4.434)

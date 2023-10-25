@@ -88,7 +88,7 @@ public class Purchase extends BaseEntity {
 	public void setBook(long book) {
 		this.bookId = book;
 	}
-
+	
 	public PaymentMethod getPaymentMethod() {
 		return paymentMethod;
 	}

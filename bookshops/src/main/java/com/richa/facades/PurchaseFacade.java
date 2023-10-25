@@ -8,12 +8,17 @@ import com.richa.entities.Book;
 import com.richa.entities.Customer;
 import com.richa.entities.Purchase;
 import com.richa.entities.enums.PaymentMethod;
+import com.richa.exception.global.customexceptions.BookCreateException;
+import com.richa.exception.global.customexceptions.CustomerCreateException;
+import com.richa.exception.global.customexceptions.PaymentException;
 import com.richa.restconsumers.RestBookService;
 //import com.richa.services.BookService;
 import com.richa.services.CustomerService;
 import com.richa.services.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Optional;
@@ -29,7 +34,7 @@ public class PurchaseFacade {
     private PurchaseService purchaseService;
 
 //    @Autowired
-//    private BookService bookService;// call bookService using restTemplate
+ //  private BookService bookService;
 //    @Autowired
 //    private RestBookService restBookService;
 
@@ -45,32 +50,31 @@ public class PurchaseFacade {
     public PurchaseFacade() {
     }
 
-	public PurchaseResponseDTO performPurchase(PurchaseRequestDTO purchaseRequestDTO) {
-        PurchaseResponseDTO purchaseResponseDTO = new PurchaseResponseDTO();
-        Optional<BookDTO> bookOptional = RestBookService.findBookByISBN(purchaseRequestDTO.getBookISBN());
+	public PurchaseResponseDTO performPurchase(PurchaseRequestDTO purchaseRequestDTO) throws Exception,BookCreateException, CustomerCreateException,PaymentException {
+		RestTemplate restTemplate =new RestTemplate();
+    	RestBookService restBookService=new RestBookService(restTemplate);
+		PurchaseResponseDTO purchaseResponseDTO = new PurchaseResponseDTO();
+        Optional<BookDTO> bookOptional = restBookService.findBookByISBN(purchaseRequestDTO.getBookISBN());
         System.out.println("BookService called");
         if(!bookOptional.isPresent()) {
-            purchaseResponseDTO.setErrorMessage(BOOK_NOT_FOUND.getMessage());
-            purchaseResponseDTO.setError(BOOK_NOT_FOUND.getCode());
-            return  purchaseResponseDTO;
+        	String errMsg="Book is not there!";
+        	throw new BookCreateException(errMsg,HttpStatus.BAD_REQUEST.value());
         }
         System.out.println("BookDtO....");
        System.out.println(bookOptional.get());
         Optional<CustomerDTO> customerOptional = customerFacade.findCustomerByEmail(purchaseRequestDTO.getCustomerEmail());
-        System.out.println("Customer Service called");
+//        System.out.println("Customer Service called");
         if(!customerOptional.isPresent()) {
-            purchaseResponseDTO.setErrorMessage(CUSTOMER_NOT_FOUND.getMessage());
-            purchaseResponseDTO.setError(CUSTOMER_NOT_FOUND.getCode());
-            return  purchaseResponseDTO;
+        	String errMsg="Customer is not Present!";
+        	throw new CustomerCreateException(errMsg,HttpStatus.BAD_REQUEST.value());
         }
         System.out.println("CustomerDTO...");
        System.out.println(customerOptional.get());
         Optional<PaymentMethod> paymentMethodOptional = PaymentMethod.fromValue(purchaseRequestDTO.getPaymentMethod());
-        System.out.println("Fetched Payment Method");
+//        System.out.println("Fetched Payment Method");
         if(!paymentMethodOptional.isPresent()) {
-            purchaseResponseDTO.setErrorMessage(PAYMENT_METHOD_NOT_VALID.getMessage());
-            purchaseResponseDTO.setError(PAYMENT_METHOD_NOT_VALID.getCode());
-            return purchaseResponseDTO;
+        	String errMsg="Payment Method is invalid";
+        	throw new PaymentException(errMsg,HttpStatus.BAD_REQUEST.value());
         }
         System.out.println("Payment Method..");
         System.out.println(paymentMethodOptional.get());
@@ -97,8 +101,19 @@ public class PurchaseFacade {
         return purchaseResponseDTO;
     }
 
-    public List<PurchaseResponseDTO> findPurchasesByCustomerEmail(String email){
-    	return purchaseService.findPurchasesByCustomerEmail(email).stream().map(PurchaseResponseDTO::fromPurchase).collect(Collectors.toList());
+    public List<PurchaseResponseDTO> findPurchasesByCustomerEmail(String email) throws Exception{
+    	
+    	List<Purchase> purchaseResponseDTO=purchaseService.findPurchasesByCustomerEmail(email);
+    	if(!purchaseResponseDTO.isEmpty()) {
+
+    		return purchaseService.findPurchasesByCustomerEmail(email).stream().map(PurchaseResponseDTO::fromPurchase).collect(Collectors.toList());
+    	}
+    	else {
+    		String err="Customer not found with the id";
+    		throw new Exception(err);
+    	}
+ 
+    	
     }
     private Book convertToBook(BookDTO bookDTO) {
     	Book book = new Book();

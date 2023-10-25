@@ -17,8 +17,7 @@ public class BookServiceConsumer {
 	public static final String ADD_BOOKS_API="http://localhost:2289/books";
 	public static final String GET_ALL="http://localhost:2289/books";
 //	public static final String GET_BY_ISBN="http://localhost:2289/books?isbn=";
-	
-	
+		
 	static RestTemplate restTemplate=new RestTemplate();
 	public static void main(String[] args) {
 		addBooks(new BookDTO("1234567891","RestTemplate",170.14,"RamShankar", 300,"RestTemplate for advance"));

@@ -6,6 +6,9 @@ import com.richa.restconsumers.RestBookService;
 import java.util.Optional;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.client.RestTemplate;
+
 
 public class PurchaseResponseDTO extends BaseDTO {
 
@@ -43,9 +46,11 @@ public class PurchaseResponseDTO extends BaseDTO {
     }
 
     public static PurchaseResponseDTO fromPurchase(Purchase purchase){
+    	RestTemplate restTemplate =new RestTemplate();
+    	RestBookService restBookService=new RestBookService(restTemplate);
     	System.out.println("Purchase entity saved");
     	System.out.println(purchase);
-    	Optional<BookDTO> bookDTO=RestBookService.findBookById(purchase.getBook());//getting complete bookdetails
+    	Optional<BookDTO> bookDTO=restBookService.findBookById(purchase.getBook());//getting complete bookdetails
     	return PurchaseResponseDTO.newPurchaseResponseDTO()
     			.id(purchase.getId())
 //                .price(purchase.getPrice())

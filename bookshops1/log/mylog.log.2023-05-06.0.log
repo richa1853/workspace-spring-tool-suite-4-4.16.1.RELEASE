@@ -1,0 +1,12 @@
+2023-05-06 10:27:41.107  INFO 25444 --- [restartedMain] com.richa.BookshopsApplication           : Starting BookshopsApplication using Java 17.0.4.1 on PSL-4L47XM3 with PID 25444 (C:\Users\richa_raj\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\bookshops1\target\classes started by richa_raj in C:\Users\richa_raj\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\bookshops1)
+2023-05-06 10:27:41.111  INFO 25444 --- [restartedMain] com.richa.BookshopsApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-05-06 10:27:41.169  INFO 25444 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-06 10:27:41.169  INFO 25444 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-06 10:27:41.814  INFO 25444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-06 10:27:41.875  INFO 25444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 1 JPA repository interfaces.
+2023-05-06 10:27:42.464  INFO 25444 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2289 (http)
+2023-05-06 10:27:42.474  INFO 25444 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-06 10:27:42.474  INFO 25444 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2023-05-06 10:27:42.572  INFO 25444 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-06 10:27:42.572  INFO 25444 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1402 ms
+2023-05-06 10:27:42.597  INFO 25444 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...

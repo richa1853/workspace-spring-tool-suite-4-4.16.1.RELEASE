@@ -119,6 +119,8 @@ public class CustomerDTO extends BaseDTO {
     public void setPurchases(List<Purchase> purchases) {
         this.purchases = purchases;
     }
+    
+   
 
     @Override
     public boolean equals(Object o) {

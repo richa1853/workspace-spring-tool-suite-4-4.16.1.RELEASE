@@ -1,0 +1,13 @@
+2023-01-31 13:23:37.355  INFO 64280 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-31 13:23:37.366  INFO 64280 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-31 13:23:53.395  INFO 77372 --- [restartedMain] com.richa.BookshopsApplication           : Starting BookshopsApplication using Java 17.0.4.1 on PSL-4L47XM3 with PID 77372 (C:\Users\richa_raj\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\bookshops1\target\classes started by richa_raj in C:\Users\richa_raj\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\bookshops1)
+2023-01-31 13:23:53.396  INFO 77372 --- [restartedMain] com.richa.BookshopsApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-01-31 13:23:53.444  INFO 77372 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-01-31 13:23:53.444  INFO 77372 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-31 13:23:54.084  INFO 77372 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-31 13:23:54.150  INFO 77372 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 1 JPA repository interfaces.
+2023-01-31 13:23:54.744  INFO 77372 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2289 (http)
+2023-01-31 13:23:54.754  INFO 77372 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-31 13:23:54.754  INFO 77372 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2023-01-31 13:23:54.862  INFO 77372 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-31 13:23:54.862  INFO 77372 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1417 ms
